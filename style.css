@@ -177,6 +177,7 @@ a.model-link.inside {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation: building 500ms;
+    background-repeat: repeat;
 }
 
 /* Building state (orange stripes) styling for main project table and build process table on left side */
