@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                     {
                         src  : [
                             'meetic-logo.png',
-                            'kwikdisk.png'
+                            'kwikdisk.png',
+                            'stripe_*.png'
                         ],
                         dest : 'build/'
                     }
