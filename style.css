@@ -139,13 +139,6 @@ a.model-link.inside {
     display: none;
 }
 
-img[alt~="Folder"] {
-    display: inline-block;
-    background-image: url('kwikdisk.png');
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 /* Remove border from last cell of project table rows */
 #projectstatus td:last-child {
@@ -173,7 +166,7 @@ img[alt~="Folder"] {
 
 
 
-#executors tr.unknown,
+tr.unknown,
 td.progress-bar-done,
 #projectstatus td:first-child{
     -webkit-animation: building 800ms; /* Chrome, Safari, Opera */
@@ -232,7 +225,7 @@ td.progress-bar-left {
 }
 
 
-#executors tr.unknown {
+tr.unknown {
     background-image: url("stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
@@ -369,4 +362,17 @@ table {
 td.healthReport{
     width:32px;
     text-align: center;
+}
+
+
+/**All icon that are replaced are here */
+/* a JS is needed to remove original SRC icons */
+
+
+img[alt~="Folder"] {
+    display: inline-block;
+    background-image: url('kwikdisk.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
