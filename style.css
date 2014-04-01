@@ -186,7 +186,9 @@ td.progress-bar-done,
 }
 
 /* Building state (orange stripes) styling for main project table and build process table on left side */
-#projectstatus td:first-child[data="1"],
+#projectstatus td:first-child[data="1"]{
+    background-image: url("stripe_green.png") !important;
+}
 #projectstatus td:first-child[data="5"],
 table.progress-bar.red td.progress-bar-done {
     background-image: url("stripe_orange.png") !important; /* http://www.stripegenerator.com/#Zm9yZT1GMEE0MDA7aD0zMDt3PTU7cD01O2JhY2sxPUUwOTkwMDtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
