@@ -304,3 +304,7 @@ textarea {
 #search-wrap #searchform #search-box {
     width: 33%;
 }
+
+table {
+    border-color: transparent ;
+}

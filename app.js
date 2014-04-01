@@ -34,5 +34,5 @@ document.observe("dom:loaded", function () {
     // Clear style attribute for search field
     searchbox.style = null;
 
-    jQuery('.dashboard img[alt="Folder"]').attr('src','');
+    jQuery('.dashboard img[alt="Folder"]').attr('src','data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='); //blank gif
 });
