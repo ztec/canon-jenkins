@@ -138,6 +138,10 @@ a.model-link.inside {
 #projectstatus td:first-child img {
     display: none;
 }
+#projectstatus td:first-child img[alt~="Folder"]
+{
+    display: inline-block;
+}
 
 /* Remove border from last cell of project table rows */
 #projectstatus td:last-child {
