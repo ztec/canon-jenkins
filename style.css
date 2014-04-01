@@ -308,3 +308,8 @@ textarea {
 table {
     border-color: transparent ;
 }
+
+td.healthReport{
+    width:32px;
+    text-align: center;
+}
