@@ -21,8 +21,7 @@ module.exports = function(grunt) {
                 files : [
                     {
                         src  : [
-                            'app.js',
-                            'style.css'
+                            'meetic-logo.png'
                         ],
                         dest : 'build/'
                     }
@@ -61,7 +60,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'uglify', 'cssmin','rev','jshint']);
+    grunt.registerTask('default', ['clean', 'copy','uglify', 'cssmin','rev','jshint']);
 
 
 };
