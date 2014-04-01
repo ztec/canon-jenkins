@@ -188,7 +188,7 @@ table.progress-bar.red td.progress-bar-done {
 }
 
 /* Building with no previous build done (first run) */
-#projectstatus td:first-child{
+#projectstatus td:first-child[data="13"]{
     background-image: url("stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
