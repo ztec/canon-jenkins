@@ -79,7 +79,7 @@ a.model-link.inside {
     background-size: auto 90%;
     display: block;
     height: 54px;
-    margin-left:13px
+    margin-left: 13px
 }
 
 /* Add padding to top of main table */
@@ -138,11 +138,13 @@ a.model-link.inside {
 #projectstatus td:first-child img {
     display: none;
 }
-#projectstatus td:first-child img[alt~="Folder"]
-{
+
+#projectstatus td:first-child img[alt~="Folder"] {
     display: inline-block;
     background-image: url('kwikdisk.png');
-    background-size: auto 100% ;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 /* Remove border from last cell of project table rows */
