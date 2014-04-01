@@ -160,15 +160,15 @@ a.model-link.inside {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes building
 {
-    from {background-position: 0 0}
-    to {background-position: 100% 0}
+    from {background-position: 100% 0}
+    to {background-position: 0 0}
 }
 
 /* Standard syntax */
 @keyframes building
 {
-    from {background-position: 0 0}
-    to {background-position: 100% 0}
+    from {background-position: 100% 0}
+    to {background-position: 0 0}
 }
 
 
@@ -183,6 +183,8 @@ table.progress-bar.red td.progress-bar-done {
 #projectstatus td:first-child{
     background-image: url("stripe_gray.png") !important;
     -webkit-animation: building 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     animation: building 2s;
 
 }
