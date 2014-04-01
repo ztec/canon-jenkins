@@ -139,7 +139,7 @@ a.model-link.inside {
     display: none;
 }
 
-#projectstatus td:first-child img[alt~="Folder"] {
+img[alt~="Folder"] {
     display: inline-block;
     background-image: url('kwikdisk.png');
     background-size: auto 100%;
