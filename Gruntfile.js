@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             build : {
                 files: {
-                    'build/output.min.js': ['app.js']
+                    'build/ilius.min.js': ['app.js']
                 }
             }
         },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         cssmin: {
             minify: {
                 files: {
-                    'build/styles.css' : ['*.css']
+                    'build/ilius.css' : ['*.css']
                 }
             }
         },
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'copy','uglify', 'cssmin','rev','jshint']);
+    grunt.registerTask('default', ['clean', 'copy','uglify', 'cssmin','jshint']);
 
 
 };
