@@ -21,7 +21,8 @@ module.exports = function(grunt) {
                 files : [
                     {
                         src  : [
-                            'meetic-logo.png'
+                            'meetic-logo.png',
+                            'kwikdisk.png'
                         ],
                         dest : 'build/'
                     }
