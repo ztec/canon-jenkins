@@ -160,14 +160,14 @@ a.model-link.inside {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes building
 {
-    from {background-position: 200% 0}
+    from {background-position: 20px 0}
     to {background-position: 0 0}
 }
 
 /* Standard syntax */
 @keyframes building
 {
-    from {background-position: 200% 0}
+    from {background-position: 20px 0}
     to {background-position: 0 0}
 }
 #projectstatus td:first-child{
