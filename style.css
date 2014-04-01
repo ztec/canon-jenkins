@@ -170,7 +170,14 @@ a.model-link.inside {
     from {background-position: 100% 0}
     to {background-position: 0 0}
 }
-
+#projectstatus td:first-child{
+    -webkit-animation: building 500ms; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation: building 500ms;
+}
 
 /* Building state (orange stripes) styling for main project table and build process table on left side */
 #projectstatus td:first-child[data="1"],
@@ -182,11 +189,6 @@ table.progress-bar.red td.progress-bar-done {
 /* Building with no previous build done (first run) */
 #projectstatus td:first-child{
     background-image: url("stripe_gray.png") !important;
-    -webkit-animation: building 2s; /* Chrome, Safari, Opera */
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    animation: building 2s;
-
 }
 
 /* Success state (green) styling for project table */
