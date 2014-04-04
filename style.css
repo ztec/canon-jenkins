@@ -75,7 +75,7 @@ a.model-link.inside {
 
 /* Rackspace logo */
 #rackspace-logo {
-    background: url('meetic-logo.png') no-repeat scroll left center transparent;
+    background: url('img/meetic-logo.png') no-repeat scroll left center transparent;
     background-size: auto 90%;
     display: block;
     height: 54px;
@@ -180,17 +180,17 @@ td.progress-bar-done,
 
 /* Building state (orange stripes) styling for main project table and build process table on left side */
 #projectstatus td:first-child[data="1"]{
-    background-image: url("stripe_orange.png") !important; /* http://www.stripegenerator.com/#Zm9yZT1GMEE0MDA7aD0zMDt3PTU7cD01O2JhY2sxPUUwOTkwMDtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
+    background-image: url("img/stripe_orange.png") !important; /* http://www.stripegenerator.com/#Zm9yZT1GMEE0MDA7aD0zMDt3PTU7cD01O2JhY2sxPUUwOTkwMDtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
 #projectstatus td:first-child[data="5"],
 table.progress-bar.red td.progress-bar-done {
-    background-image: url("stripe_green.png") !important;
+    background-image: url("img/stripe_green.png") !important;
 }
 
 /* Building with no previous build done (first run) */
 #projectstatus td:first-child[data="13"]{
-    background-image: url("stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
+    background-image: url("img/stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
 /* Success state (green) styling for project table */
@@ -209,13 +209,13 @@ table.progress-bar.red td.progress-bar-done {
 table.progress-bar.red td.progress-bar-done {
     background-color: #CC0000;
     border: 1px solid #BBBBBB;
-    background-image: url("stripe_orange.png") !important;
+    background-image: url("img/stripe_orange.png") !important;
 }
 
 /* Building state (green stripes) styling for build process table on left side */
 td.progress-bar-done {
     background-color: #3465A4;
-    background-image: url("stripe_green.png") !important; /*http://www.stripegenerator.com/#Zm9yZT03M0JGNTA7aD0zMDt3PTU7cD01O2JhY2sxPTgzREU1OTtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7*/
+    background-image: url("img/stripe_green.png") !important; /*http://www.stripegenerator.com/#Zm9yZT03M0JGNTA7aD0zMDt3PTU7cD01O2JhY2sxPTgzREU1OTtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7*/
     border: 1px solid #BBBBBB;
 }
 
@@ -226,7 +226,7 @@ td.progress-bar-left {
 
 
 tr.unknown {
-    background-image: url("stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
+    background-image: url("img/stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
 
@@ -371,8 +371,53 @@ td.healthReport{
 
 img[alt~="Folder"] {
     display: inline-block !important;
-    background-image: url('kwikdisk.png');
+    background-image: url('img/kwikdisk.png');
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+
+img.build-status-icon ,
+img.build-caption-status-icon {
+    background-image: url('img/box-gray.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+img.build-status-icon.blue ,
+img.build-caption-status-icon.blue {
+    background-image: url('img/box-green.png');
+}
+img.build-status-icon.red ,
+img.build-caption-status-icon.red {
+    background-image: url('img/box-red.png');
+}
+
+
+img.build-status-icon.anime ,
+img.build-caption-status-icon.anime {
+    -webkit-animation: building_cube 800ms; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: ease-in-out;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation: building_cube 800ms;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes building_cube
+{
+    from {opacity: 1}
+    to {opacity: 0}
+}
+
+/* Standard syntax */
+@keyframes building_cube
+{
+    from {opacity: 1}
+    to {opacity: 0}
 }
