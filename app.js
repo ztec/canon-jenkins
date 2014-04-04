@@ -49,7 +49,6 @@ document.observe("dom:loaded", function () {
                 src = regex.exec(src);
                 src = src[0].split('.');
                 var className = src[0];
-                console.dir(src);
                 jQuery(element).addClass(className);
                 var multiplesClasses = className.split('_');
                 jQuery(multiplesClasses).each(function (index, item) {
@@ -61,4 +60,17 @@ document.observe("dom:loaded", function () {
     };
 
     replaceBall.apply(this);
+    /*Ajax.oldRequest =  Ajax.Request ;
+    Ajax.Request = function (src, options) {
+        if (options.onSuccess) {
+            options.onSuccess = function () {
+                console.debug('toto');
+                options.onSuccess(src,options);
+            };
+        }
+        Ajax.oldRequest.apply(this,src,options);
+    };*/
+    setInterval(replaceBall,400);
+
+
 });
