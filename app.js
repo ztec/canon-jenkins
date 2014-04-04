@@ -60,16 +60,6 @@ document.observe("dom:loaded", function () {
     };
 
     replaceBall.apply(this);
-    /*Ajax.oldRequest =  Ajax.Request ;
-    Ajax.Request = function (src, options) {
-        if (options.onSuccess) {
-            options.onSuccess = function () {
-                console.debug('toto');
-                options.onSuccess(src,options);
-            };
-        }
-        Ajax.oldRequest.apply(this,src,options);
-    };*/
     setInterval(replaceBall,400);
 
 
