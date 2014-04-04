@@ -399,8 +399,8 @@ img.build-caption-status-icon.red {
 img.build-status-icon.anime ,
 img.build-caption-status-icon.anime {
     -webkit-animation: building_cube 800ms; /* Chrome, Safari, Opera */
-    -webkit-animation-iteration-count: ease-in-out;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-direction: alternate;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;

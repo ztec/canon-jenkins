@@ -36,18 +36,29 @@ document.observe("dom:loaded", function () {
     var blankGif  = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' ;//blank gif
     jQuery('img[alt="Folder"]').attr('src',blankGif);
 
-    jQuery('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
-        var src = element.src ;
-        var regex = new RegExp("(?=\\w+\\.\\w{3,4}$).+","g");
-        src = regex.exec(src);
-        src = src[0].split('.');
-        var className = src[0];
-        console.dir(src);
-        jQuery(element).addClass(className);
-        var multiplesClasses = className.split('_');
-        jQuery(multiplesClasses).each(function(index,item){
-            jQuery(element).addClass(item);
+
+
+
+
+
+    var replaceBall = function(){
+        jQuery('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
+            if(element.src !== blankGif) {
+                var src = element.src;
+                var regex = new RegExp("(?=\\w+\\.\\w{3,4}$).+", "g");
+                src = regex.exec(src);
+                src = src[0].split('.');
+                var className = src[0];
+                console.dir(src);
+                jQuery(element).addClass(className);
+                var multiplesClasses = className.split('_');
+                jQuery(multiplesClasses).each(function (index, item) {
+                    jQuery(element).addClass(item);
+                });
+                element.src = blankGif;
+            }
         });
-        element.src = blankGif ;
-    });
+    };
+
+    replaceBall.apply(this);
 });
