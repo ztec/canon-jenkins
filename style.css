@@ -370,7 +370,7 @@ td.healthReport{
 
 
 img[alt~="Folder"] {
-    display: inline-block;
+    display: inline-block !important;
     background-image: url('kwikdisk.png');
     background-size: auto 100%;
     background-repeat: no-repeat;
