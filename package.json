@@ -11,8 +11,8 @@
     "jenkins"
   ],
   "author": "David Porter",
-  "contributors" : [
-      "Brady Vitrano"
+  "contributors": [
+    "Brady Vitrano"
   ],
   "license": "BSD",
   "devDependencies": {
@@ -23,6 +23,7 @@
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-rev": "~0.1.0",
-    "grunt-contrib-jshint": "~0.6.4"
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-watch": "~0.6.1"
   }
 }

@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                     {
                         src  : [
                             'meetic-logo.png',
-                            'img/*'
+                            'img/*',
+                            'font/*'
                         ],
                         dest : 'build/'
                     }
@@ -49,6 +50,15 @@ module.exports = function(grunt) {
         },
         jshint: {
             files: ['*.js']
+        },
+        watch: {
+            scripts: {
+                files: ['app.js','style.css'],
+                tasks: ['default'],
+                options: {
+                    spawn: false
+                }
+            }
         }
     });
 
@@ -59,6 +69,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-rev');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['clean', 'copy','uglify', 'cssmin','jshint']);
