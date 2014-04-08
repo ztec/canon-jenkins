@@ -12,8 +12,6 @@ document.observe("dom:loaded", function () {
     var blankGif  = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' ;//blank gif
     jQuery('img[alt="Folder"]').attr('src',blankGif);
     var replaceBall = function(e){
-        console.dir(arguments);
-        console.debug('replacement ball');
         var scope ;
         if(e && e.target) {
             scope = jQuery(e.target);
@@ -89,8 +87,6 @@ document.observe("dom:loaded", function () {
     };
 
     var replaceImages = function(e) {
-        console.dir(arguments);
-        console.debug('replacement image');
         var scope ;
         if(e && e.target) {
             scope = jQuery(e.target);
@@ -152,7 +148,7 @@ document.observe("dom:loaded", function () {
                 if (e instanceof iconNotFound) {
                     //console.warn(e.toString());
                 } else {
-                    console.warn('unable to process an image. Current src was ' + src + ' (' + e.toString() + ')');
+                    //console.warn('unable to process an image. Current src was ' + src + ' (' + e.toString() + ')');
                 }
             }
         });
@@ -167,6 +163,7 @@ document.observe("dom:loaded", function () {
 
     var onDomChange = function(){
         jQuery('body').off('DOMSubtreeModified');
+        console.debug('On DomChange');
         replaceBall.apply(this);
         replaceImages.apply(this);
         jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
