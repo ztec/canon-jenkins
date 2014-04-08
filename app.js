@@ -79,73 +79,82 @@ document.observe("dom:loaded", function () {
         return 'icon ' + this.iconName + ' was not found in ref' ;
     };
 
-    jQuery('img').each(function(index, element){
-        var src = element.src ;
-        try{
-            var regex = new RegExp("(?=[^/]+\\.[^/]{3,4}$).+", "g");
-            src = regex.exec(src);
-            src = src[0].split('.');
-            var imageName = src[0];
-            if(iconRef[imageName] !== undefined){
-                if( Object.prototype.toString.call( iconRef[imageName] ) === '[object Array]' ) { //Stack case
-                    var iconStack = new Element('span');
-                    jQuery(iconStack).addClass('fa-stack');
-                    console.dir(iconRef[imageName]);
-                    jQuery(iconRef[imageName]).each(function(index,item){
+    var replaceImages = function() {
+        jQuery('img').each(function (index, element) {
+            var src = element.src;
+            try {
+                var regex = new RegExp("(?=[^/]+\\.[^/]{3,4}$).+", "g");
+                src = regex.exec(src);
+                src = src[0].split('.');
+                var imageName = src[0];
+                if (iconRef[imageName] !== undefined) {
+                    if (Object.prototype.toString.call(iconRef[imageName]) === '[object Array]') { //Stack case
+                        var iconStack = new Element('span');
+                        jQuery(iconStack).addClass('fa-stack');
+                        console.dir(iconRef[imageName]);
+                        jQuery(iconRef[imageName]).each(function (index, item) {
+                            var icon = new Element('i');
+                            jQuery(icon).addClass(item).addClass('fa');
+                            iconStack.appendChild(icon);
+                        });
+                        if (element.height) {
+                            jQuery(iconStack).css('height', element.height + 'px');
+                            jQuery(iconStack).css('font-size', element.height / 2);
+                            jQuery(iconStack).css('display', 'inline-block');
+                        }
+                        if (element.width) {
+                            jQuery(iconStack).css('width', element.width + 'px');
+                            jQuery(iconStack).css('display', 'inline-block');
+                        }
+                        jQuery(element).after(iconStack);
+                        jQuery(element).remove();
+                        console.debug('icon ' + imageName + ' was replaced by a stack of icons "' + iconRef[imageName].join(',') + '"');
+                    } else {
+
                         var icon = new Element('i');
-                        jQuery(icon).addClass(item).addClass('fa');
-                        iconStack.appendChild(icon);
-                    });
-                    if(element.height){
-                        jQuery(iconStack).css('height',element.height+'px');
-                        jQuery(iconStack).css('font-size',element.height/2);
-                        jQuery(iconStack).css('display','inline-block');
-                    }
-                    if(element.width){
-                        jQuery(iconStack).css('width',element.width+'px');
-                        jQuery(iconStack).css('display','inline-block');
-                    }
-                    jQuery(element).after(iconStack);
-                    jQuery(element).remove();
-                    console.debug('icon ' + imageName + ' was replaced by a stack of icons "' + iconRef[imageName].join(',')+'"');
-                }else{
+                        jQuery(icon).addClass(iconRef[imageName]);
 
-                    var icon = new Element('i');
-                    jQuery(icon).addClass(iconRef[imageName]);
+                        if (element.height) {
+                            jQuery(icon).css('height', element.height + 'px');
+                            jQuery(icon).css('font-size', element.height + 'px');
+                            jQuery(icon).css('display', 'inline-block');
+                        }
+                        if (element.width) {
+                            jQuery(icon).css('width', element.width + 'px');
+                            jQuery(icon).css('display', 'inline-block');
+                        }
 
-                    if(element.height){
-                        jQuery(icon).css('height',element.height+'px');
-                        jQuery(icon).css('font-size',element.height+'px');
-                        jQuery(icon).css('display','inline-block');
+                        jQuery(element).after(icon);
+                        jQuery(element).remove();
+                        console.debug('icon ' + imageName + ' was replaced by ' + iconRef[imageName]);
                     }
-                    if(element.width){
-                        jQuery(icon).css('width',element.width+'px');
-                        jQuery(icon).css('display','inline-block');
-                    }
-
-                    jQuery(element).after(icon);
-                    jQuery(element).remove();
-                    console.debug('icon ' + imageName + ' was replaced by ' + iconRef[imageName]);
+                } else {
+                    throw new iconNotFound(imageName);
                 }
-            }else {
-                throw new iconNotFound(imageName);
+            } catch (e) {
+                if (e instanceof iconNotFound) {
+                    console.warn(e.toString());
+                } else {
+                    console.warn('unable to process an image. Current src was ' + src + ' (' + e.toString() + ')');
+                }
             }
-        }catch(e){
-            if( e instanceof iconNotFound) {
-                console.warn(e.toString());
-            }else {
-                console.warn('unable to process an image. Current src was ' + src+ ' ('+ e.toString()+')');
-            }
-        }
-    });
+        });
+    };
+
+
+
     //Add css mark to the current view selected
-    jQuery('#tasks .task b').closest('.task').addClass('current');
+    jQuery('#tasks').find('.task b').closest('.task').addClass('current');
 
 
 
 
     replaceBall.apply(this);
-    setInterval(replaceBall,400);
+    replaceImages.apply(this);
+
+    jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
+
+    //setInterval(replaceBall,400);
 
 
     // Copy auto-refresh link into footer
