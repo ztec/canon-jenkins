@@ -161,9 +161,9 @@ document.observe("dom:loaded", function () {
 
 
 
-    var onDomChange = function(){
+    var onDomChange = function(e){
         console.debug('On DomChange');
-        if(e.handled !== true) {
+        if(!e || e.handled !== true) {
             jQuery('body').off('DOMSubtreeModified');
             replaceBall.apply(this);
             replaceImages.apply(this);
