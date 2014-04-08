@@ -12,6 +12,7 @@ document.observe("dom:loaded", function () {
     var blankGif  = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' ;//blank gif
     jQuery('img[alt="Folder"]').attr('src',blankGif);
     var replaceBall = function(){
+        console.debug('replacement ball');
         jQuery('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
             if(element.src !== blankGif) {
                 var src = element.src;
@@ -80,6 +81,7 @@ document.observe("dom:loaded", function () {
     };
 
     var replaceImages = function() {
+        console.debug('replacement image');
         jQuery('img').each(function (index, element) {
             var src = element.src;
             try {
