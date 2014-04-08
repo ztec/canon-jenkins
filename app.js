@@ -162,11 +162,15 @@ document.observe("dom:loaded", function () {
 
 
     var onDomChange = function(){
-        jQuery('body').off('DOMSubtreeModified');
         console.debug('On DomChange');
-        replaceBall.apply(this);
-        replaceImages.apply(this);
-        jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
+        if(e.handled !== true) {
+            jQuery('body').off('DOMSubtreeModified');
+            replaceBall.apply(this);
+            replaceImages.apply(this);
+            jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
+            e.handled = true ;
+        }
+
     };
 
     onDomChange.apply(this);
