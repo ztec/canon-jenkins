@@ -28,6 +28,8 @@ body {
 }
 
 
+
+
 /* Styling for wrapper div added via javascript around project table */
 #main-table-wrap {
     background-color: #EEEEEE;
@@ -641,6 +643,7 @@ body, table, form, input, td, th, p, textarea, select{
     border : 0 solid transparent;
 }
 #navigation td.pane-header,
+#navigation th[colspan="3"],
 #navigation td.pane-header a{
     background-color: #555 !important;
     color:#ffffff ;
