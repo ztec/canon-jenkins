@@ -167,7 +167,7 @@ document.observe("dom:loaded", function () {
             jQuery('body').off('DOMSubtreeModified');
             replaceBall.apply(this);
             replaceImages.apply(this);
-            jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
+            jQuery('body').on('DOMSubtreeModified',onDomChange);
             e.handled = true ;
         }
 
