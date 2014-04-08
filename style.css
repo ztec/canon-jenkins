@@ -20,8 +20,11 @@ body {
 #side-panel a:visited {
     color: #c166b8;
 }
+#side-panel  a:link:hover {
+    color:#ffffff;
+}
 #side-panel  a:link {
-    color: #303030;
+    color: #eeeeee;
 }
 
 
