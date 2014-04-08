@@ -11,10 +11,16 @@ document.observe("dom:loaded", function () {
 
     var blankGif  = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' ;//blank gif
     jQuery('img[alt="Folder"]').attr('src',blankGif);
-    var replaceBall = function(){
+    var replaceBall = function(e){
         console.dir(arguments);
         console.debug('replacement ball');
-        jQuery('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
+        var scope ;
+        if(e && e.target) {
+            scope = jQuery(e.target);
+        }else{
+            scope = jQuery('body');
+        }
+        scope.find('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
             if(element.src !== blankGif) {
                 var src = element.src;
                 var regex = new RegExp("(?=\\w+\\.\\w{3,4}$).+", "g");
@@ -81,10 +87,16 @@ document.observe("dom:loaded", function () {
         return 'icon ' + this.iconName + ' was not found in ref' ;
     };
 
-    var replaceImages = function() {
+    var replaceImages = function(e) {
         console.dir(arguments);
         console.debug('replacement image');
-        jQuery('img').each(function (index, element) {
+        var scope ;
+        if(e && e.target) {
+            scope = jQuery(e.target);
+        }else{
+            scope = jQuery('img');
+        }
+        scope.each(function (index, element) {
             var src = element.src;
             try {
                 var regex = new RegExp("(?=[^/]+\\.[^/]{3,4}$).+", "g");
