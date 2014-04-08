@@ -35,6 +35,7 @@ document.observe("dom:loaded", function () {
                 element.src = blankGif;
             }
         });
+
     };
     var iconRef = {
         "user" : "fa fa-users",
@@ -164,11 +165,15 @@ document.observe("dom:loaded", function () {
 
 
 
+    var onDomChange = function(){
+        jQuery('body').off('DOMSubtreeModified');
+        replaceBall.apply(this);
+        replaceImages.apply(this);
+        jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
+    };
 
-    replaceBall.apply(this);
-    replaceImages.apply(this);
+    onDomChange.apply(this);
 
-    jQuery('body').on('DOMSubtreeModified',replaceBall).on('DOMSubtreeModified',replaceImages);
 
     //setInterval(replaceBall,400);
 
