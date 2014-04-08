@@ -12,6 +12,7 @@ document.observe("dom:loaded", function () {
     var blankGif  = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' ;//blank gif
     jQuery('img[alt="Folder"]').attr('src',blankGif);
     var replaceBall = function(){
+        console.dir(arguments);
         console.debug('replacement ball');
         jQuery('img.build-status-icon, img.build-caption-status-icon').each(function(index, element){
             if(element.src !== blankGif) {
@@ -81,6 +82,7 @@ document.observe("dom:loaded", function () {
     };
 
     var replaceImages = function() {
+        console.dir(arguments);
         console.debug('replacement image');
         jQuery('img').each(function (index, element) {
             var src = element.src;
@@ -135,7 +137,7 @@ document.observe("dom:loaded", function () {
                 }
             } catch (e) {
                 if (e instanceof iconNotFound) {
-                    console.warn(e.toString());
+                    //console.warn(e.toString());
                 } else {
                     console.warn('unable to process an image. Current src was ' + src + ' (' + e.toString() + ')');
                 }
