@@ -81,6 +81,7 @@ document.observe("dom:loaded", function () {
         "red_anime": "build-status-icon red anime",
         "disabled": "build-status-icon gray",
         "chain": "fa fa-chain",
+        "clock_anime": "fa fa-clock-o anime",
         "confighistory": "fa fa-fast-backward"
     };
 

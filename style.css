@@ -472,8 +472,7 @@ img[alt~="Folder"] {
 }
 
 
-.build-status-icon.anime ,
-.build-caption-status-icon.anime {
+.anime {
     -webkit-animation: building_cube 600ms; /* Chrome, Safari, Opera */
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
