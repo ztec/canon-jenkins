@@ -78,6 +78,7 @@ document.observe("dom:loaded", function () {
         "yellow": "build-status-icon orange",
         "yellow_anime": "build-status-icon orange anime",
         "red": "build-status-icon red",
+        "red_anime": "build-status-icon red anime",
         "disabled": "build-status-icon gray",
         "chain": "fa fa-chain",
         "confighistory": "fa fa-fast-backward"
