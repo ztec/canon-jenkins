@@ -1,6 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(css/fontello.css);
+
 /* Main Body Styling */
 body {
     background: none repeat scroll 0 0 #333333;
@@ -13,22 +14,22 @@ body {
 #main-panel a:visited {
     color: #303030;
 }
-#main-panel  a:link {
+
+#main-panel a:link {
     color: #303030;
 }
 
 #side-panel a:visited {
     color: #eeeeee;
 }
-#side-panel  a:link:hover {
-    color:#ffffff;
+
+#side-panel a:link:hover {
+    color: #ffffff;
 }
-#side-panel  a:link {
+
+#side-panel a:link {
     color: #eeeeee;
 }
-
-
-
 
 /* Styling for wrapper div added via javascript around project table */
 #main-table-wrap {
@@ -61,10 +62,6 @@ body {
     color: #999999 !important;
     font-weight: normal !important;
     text-decoration: none;
-}
-
-.top-sticker-inner a:hover, #right-top-nav a:hover, .footer-table a:hover {
-    color: #CCCCCC !important;
 }
 
 #right-top-nav {
@@ -106,9 +103,9 @@ a.model-link.inside {
 
     filter: brightness(120%);
     -webkit-filter: brightness(120%);
-    -moz-filter:  brightness(120%);
+    -moz-filter: brightness(120%);
     -o-filter: brightness(120%);
-    -ms-filter:brightness(120%);
+    -ms-filter: brightness(120%);
 }
 
 /* Add padding to top of main table */
@@ -119,9 +116,10 @@ a.model-link.inside {
 /* Padding to space left-side panel away from main table */
 #side-panel {
     padding-right: 0;
-    padding-top:0;
-    padding-left:0;
+    padding-top: 0;
+    padding-left: 0;
 }
+
 /* Background and shadow for main panel */
 #main-panel {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -166,9 +164,8 @@ a.model-link.inside {
 /* Hide standard Jenkins project status "ball" graphics in project table */
 #projectstatus td:first-child img,
 #projectstatus td:first-child i {
-    display: none ;
+    display: none;
 }
-
 
 /* Remove border from last cell of project table rows */
 #projectstatus td:last-child {
@@ -181,31 +178,38 @@ a.model-link.inside {
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes building
-{
-    from {background-position: 0 0}
-    to {background-position: 20px 0}
+@-webkit-keyframes building {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 20px 0
+    }
 }
 
 /* Chrome, Safari, Opera */
-@-moz-keyframes building
-{
-    from {background-position: 0 0}
-    to {background-position: 20px 0}
+@-moz-keyframes building {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 20px 0
+    }
 }
 
 /* Standard syntax */
-@keyframes building
-{
-    from {background-position: 0 0}
-    to {background-position: 20px 0}
+@keyframes building {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 20px 0
+    }
 }
-
-
 
 tr.unknown,
 td.progress-bar-done,
-#projectstatus td:first-child{
+#projectstatus td:first-child {
     -webkit-animation: building 900ms; /* Chrome, Safari, Opera */
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
@@ -214,12 +218,11 @@ td.progress-bar-done,
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-
     background-repeat: repeat;
 }
 
 /* Building state (orange stripes) styling for main project table and build process table on left side */
-#projectstatus td:first-child[data="1"]{
+#projectstatus td:first-child[data="1"] {
     background-image: url("img/stripe_orange.png") !important; /* http://www.stripegenerator.com/#Zm9yZT1GMEE0MDA7aD0zMDt3PTU7cD01O2JhY2sxPUUwOTkwMDtiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
@@ -230,7 +233,7 @@ table.progress-bar.red td.progress-bar-done {
 
 /* Building with no previous build done (first run) */
 #projectstatus td:first-child[data="11"],
-#projectstatus td:first-child[data="13"]{
+#projectstatus td:first-child[data="13"] {
     background-image: url("img/stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
 
@@ -238,13 +241,6 @@ table.progress-bar.red td.progress-bar-done {
 #projectstatus td:first-child[data="4"] {
     background-color: #73BF50 !important;
 }
-
-
-
-
-
-
-
 
 /* Building state (orange stripes) styling for build process table on left side */
 table.progress-bar.red td.progress-bar-done {
@@ -265,18 +261,9 @@ td.progress-bar-left {
     border: 1px solid #BBBBBB;
 }
 
-
 tr.unknown {
     background-image: url("img/stripe_gray.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
 }
-
-
-
-
-
-
-
-
 
 /* Blue color link styling */
 .model-link,
@@ -285,8 +272,8 @@ tr.unknown {
     text-decoration: none !important;
 }
 
-.model-link:hover{
-    color: #1D71BF ;
+.model-link:hover {
+    color: #1D71BF;
     text-decoration: underline !important;
 }
 
@@ -315,23 +302,19 @@ tr.unknown {
     background-color: #FFFFFF !important;
 }
 
-.yui-skin-sam .yuimenuitem a {
-    color: #1D71BF !important;
-}
-
-.yui-skin-sam .yuimenuitemlabel-disabled, .yui-skin-sam .yuimenuitemlabel-disabled:visited {
-    color: #1D71BF !important;
-}
-
 .yuimenu li a {
-    line-height: 1.8em;
+    line-height: 2em;
     cursor: pointer !important;
+    color: #222222;
 }
 
 .yuimenu li a:hover {
     background: #eee !important;
 }
 
+.yuimenu :focus {
+    outline: none;
+}
 
 /* Input field styling */
 
@@ -352,7 +335,6 @@ textarea {
     padding: 6px 12px;
 }
 
-
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
@@ -367,7 +349,6 @@ textarea:focus {
 .setting-input {
     width: 98%;
 }
-
 
 .yui-button input[type="submit"],
 .yui-button button {
@@ -394,13 +375,13 @@ textarea:focus {
 }
 
 /* Background for build history table on left side */
-#buildHistory.pane ,
-#buildHistory.pane a{
-    color:#cecece;
+#buildHistory.pane,
+#buildHistory.pane a {
+    color: #cecece;
 }
 
-#buildHistory.pane a:hover{
-    color:#ffffff;
+#buildHistory.pane a:hover {
+    color: #ffffff;
 }
 
 /* Drop-down menu item styling */
@@ -426,18 +407,16 @@ textarea:focus {
 }
 
 table {
-    border-color: transparent ;
+    border-color: transparent;
 }
 
-td.healthReport{
-    width:32px;
+td.healthReport {
+    width: 32px;
     text-align: center;
 }
 
-
 /**All icon that are replaced are here */
 /* a JS is needed to remove original SRC icons */
-
 
 img[alt~="Folder"] {
     display: inline-block !important;
@@ -447,31 +426,30 @@ img[alt~="Folder"] {
     background-position: center center;
 }
 
-
-.build-status-icon ,
+.build-status-icon,
 .build-caption-status-icon {
     background-image: url('img/box-gray.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-left:2px;
-    margin-right:2px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
-.build-status-icon.blue ,
+.build-status-icon.blue,
 .build-caption-status-icon.blue {
     background-image: url('img/box-green.png');
 }
-.build-status-icon.red ,
+
+.build-status-icon.red,
 .build-caption-status-icon.red {
     background-image: url('img/box-red.png');
 }
 
-.build-status-icon.orange ,
+.build-status-icon.orange,
 .build-caption-status-icon.orange {
     background-image: url('img/box-orange.png');
 }
-
 
 .anime {
     -webkit-animation: building_cube 600ms; /* Chrome, Safari, Opera */
@@ -486,80 +464,92 @@ img[alt~="Folder"] {
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes building_cube
-{
-    from {opacity: 1}
-    to {opacity: 0}
+@-webkit-keyframes building_cube {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
 }
+
 /* Chrome, Safari, Opera */
-@-moz-keyframes building_cube
-{
-    from {opacity: 1}
-    to {opacity: 0}
+@-moz-keyframes building_cube {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
 }
 
 /* Standard syntax */
-@keyframes building_cube
-{
-    from {opacity: 1}
-    to {opacity: 0}
+@keyframes building_cube {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
 }
 
-body, table, form, input, td, th, p, textarea, select{
+body, table, form, input, td, th, p, textarea, select {
 
     font-family: 'Open Sans', sans-serif;
 
 }
+
 #navigation {
     background-color: #3d3d3d;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     direction: ltr;
-    color:#cdcdcd;
+    color: #cdcdcd;
 }
+
 #tasks {
     padding-left: 0;
     padding-right: 0;
-    margin-bottom : 10px;
+    margin-bottom: 10px;
 }
-#tasks .task:hover{
+
+#tasks .task:hover {
     background-color: #303030;
 }
 
-
-#tasks img{
-    filter:saturate(1000) grayscale(1) contrast(0) brightness(400%);
+#tasks img {
+    filter: saturate(1000) grayscale(1) contrast(0) brightness(400%);
     -webkit-filter: saturate(1000) grayscale(1) contrast(0) brightness(400%);
     -moz-filter: saturate(1000) grayscale(1) contrast(0) brightness(400%);
     -o-filter: saturate(1000) grayscale(1) contrast(0) brightness(400%);
     -ms-filter: saturate(1000) grayscale(1) contrast(0) brightness(400%);
-    opacity:0.6;
+    opacity: 0.6;
 }
-#tasks .task:hover img{
-    filter: contrast(100%) ;
-    -webkit-filter:contrast(100%) ;
-    -moz-filter: contrast(100%) ;
-    -o-filter: contrast(100%) ;
+
+#tasks .task:hover img {
+    filter: contrast(100%);
+    -webkit-filter: contrast(100%);
+    -moz-filter: contrast(100%);
+    -o-filter: contrast(100%);
     -ms-filter: contrast(100%);
 }
 
-#tasks>.task {
+#tasks > .task {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 14px;
     padding: 5px 15px;
     padding-right: 30px;
-    border-top: 1px solid #5c5c5c ;
-    position:relative;
+    border-top: 1px solid #5c5c5c;
+    position: relative;
 }
-
 
 #tasks .task:first-of-type {
-    border-top : none ;
+    border-top: none;
 }
 
-#tasks>.task:before{
+#tasks > .task:before {
     margin-right: 0px;
     display: inline-block;
     font-size: 16px;
@@ -568,7 +558,7 @@ body, table, form, input, td, th, p, textarea, select{
     content: "\f104";
     font-weight: 300;
     text-shadow: none;
-    color: rgba(255,255,255,.6);
+    color: rgba(255, 255, 255, .6);
     width: 20px;
     position: absolute;
     right: 0;
@@ -576,38 +566,39 @@ body, table, form, input, td, th, p, textarea, select{
     padding-left: 10px;
     line-height: 40px;
     z-index: 985;
-    background: -moz-linear-gradient(left, rgba(61,61,61,0) 0%, rgba(61,61,61,0.9) 30%, rgba(61,61,61,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(61,61,61,0)), color-stop(30%,rgba(61,61,61,0.9)), color-stop(100%,rgba(61,61,61,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(61,61,61,0) 0%,rgba(61,61,61,0.9) 30%,rgba(61,61,61,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(61,61,61,0) 0%,rgba(61,61,61,0.9) 30%,rgba(61,61,61,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(61,61,61,0) 0%,rgba(61,61,61,0.9) 30%,rgba(61,61,61,1) 100%); /* IE10+ */
-    background: linear-gradient(to right, rgba(61,61,61,0) 0%,rgba(61,61,61,0.9) 30%,rgba(61,61,61,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d3d3d', endColorstr='#3d3d3d',GradientType=1 ); /* IE6-9 */
-}
-#tasks>.task:hover:before{
-    background: -moz-linear-gradient(left, rgba(48,48,48,0) 0%, rgba(48,48,48,0.9) 30%, rgba(48,48,48,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(48,48,48,0)), color-stop(30%,rgba(48,48,48,0.9)), color-stop(100%,rgba(48,48,48,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(48,48,48,0) 0%,rgba(48,48,48,0.9) 30%,rgba(48,48,48,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(48,48,48,0) 0%,rgba(48,48,48,0.9) 30%,rgba(48,48,48,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(48,48,48,0) 0%,rgba(48,48,48,0.9) 30%,rgba(48,48,48,1) 100%); /* IE10+ */
-    background: linear-gradient(to right, rgba(48,48,48,0) 0%,rgba(48,48,48,0.9) 30%,rgba(48,48,48,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00303030', endColorstr='#303030',GradientType=1 ); /* IE6-9 */
+    background: -moz-linear-gradient(left, rgba(61, 61, 61, 0) 0%, rgba(61, 61, 61, 0.9) 30%, rgba(61, 61, 61, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(61, 61, 61, 0)), color-stop(30%, rgba(61, 61, 61, 0.9)), color-stop(100%, rgba(61, 61, 61, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(61, 61, 61, 0) 0%, rgba(61, 61, 61, 0.9) 30%, rgba(61, 61, 61, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(61, 61, 61, 0) 0%, rgba(61, 61, 61, 0.9) 30%, rgba(61, 61, 61, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(61, 61, 61, 0) 0%, rgba(61, 61, 61, 0.9) 30%, rgba(61, 61, 61, 1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(61, 61, 61, 0) 0%, rgba(61, 61, 61, 0.9) 30%, rgba(61, 61, 61, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003d3d3d', endColorstr='#3d3d3d', GradientType=1); /* IE6-9 */
 }
 
-
+#tasks > .task:hover:before {
+    background: -moz-linear-gradient(left, rgba(48, 48, 48, 0) 0%, rgba(48, 48, 48, 0.9) 30%, rgba(48, 48, 48, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(48, 48, 48, 0)), color-stop(30%, rgba(48, 48, 48, 0.9)), color-stop(100%, rgba(48, 48, 48, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(48, 48, 48, 0) 0%, rgba(48, 48, 48, 0.9) 30%, rgba(48, 48, 48, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(48, 48, 48, 0) 0%, rgba(48, 48, 48, 0.9) 30%, rgba(48, 48, 48, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(48, 48, 48, 0) 0%, rgba(48, 48, 48, 0.9) 30%, rgba(48, 48, 48, 1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(48, 48, 48, 0) 0%, rgba(48, 48, 48, 0.9) 30%, rgba(48, 48, 48, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00303030', endColorstr='#303030', GradientType=1); /* IE6-9 */
+}
 
 #tasks .task.current a {
-    color:#ffffff;
+    color: #ffffff;
 }
+
 #tasks .task.current {
     background-color: #e02222 !important;
 }
-#tasks .task.current:before{
+
+#tasks .task.current:before {
     background: none;
-    position:static;
-    float:right;
-    content:' ';
-    width:20px;
+    position: static;
+    float: right;
+    content: ' ';
+    width: 20px;
     height: 20px;
     background-color: #ffffff;
     display: block;
@@ -615,20 +606,24 @@ body, table, form, input, td, th, p, textarea, select{
     transform: rotate(45deg);
     margin-right: -40px;
     margin-top: 3px;
-    padding-left:0;
+    padding-left: 0;
 }
-#tasks .task a{
-    color :  rgba(255,255,255,0.6);
+
+#tasks .task a {
+    color: rgba(255, 255, 255, 0.6);
     display: inline-block;
     height: 30px;
     line-height: 30px;
     font-weight: 300;
 }
-#tasks .task-link{
-    margin-left:5px;
+
+#tasks .task a:last-of-type,
+#tasks .task-link {
+    margin-left: 5px;
     position: absolute;
     left: 50px;
 }
+
 #navigation table.pane {
     box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -636,37 +631,39 @@ body, table, form, input, td, th, p, textarea, select{
     margin-bottom: 15px;
 }
 
-#navigation tr ,
-#navigation td ,
-#navigation th ,
+#navigation tr,
+#navigation td,
+#navigation th,
 #navigation table {
-    border : 0 solid transparent;
+    border: 0 solid transparent;
 }
+
 #navigation td.pane-header,
 #navigation th[colspan="3"],
-#navigation td.pane-header a{
+#navigation td.pane-header a {
     background-color: #555 !important;
-    color:#ffffff ;
+    color: #ffffff;
 }
 
 #navigation .pane td:first-child {
-    padding-left:18px;
+    padding-left: 18px;
 }
 
-
-[class^=icon-]:before, [class*=" icon-"]:before{
-    width:auto;
+[class^=icon-]:before, [class*=" icon-"]:before {
+    width: auto;
     margin-left: 0;
 }
+
 /* icon sizing */
 
-#management-links tr td:first-of-type{
+#management-links tr td:first-of-type {
     width: 90px;
     text-align: center;
     overflow: hidden;
 }
 
 a .picto-color-yellow,
-.picto-color-yellow{
-    color:#747307;
+.picto-color-yellow {
+    color: #747307;
 }
+

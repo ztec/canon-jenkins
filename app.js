@@ -83,6 +83,14 @@ document.observe("dom:loaded", function () {
         "chain": "fa fa-chain",
         "clock_anime": "fa fa-clock-o anime",
         "diskusage48": "fa fa-hdd-o",
+        "package": "fa fa-archive",
+        "pmd-24x24": "fa fa-superscript",
+        "dry-24x24": "fa fa-files-o",
+        "clover_48x48": "fa fa-pagelines",
+        "dialog-warning": "fa fa-exclamation-triangle",
+        "move": "icon-move-2",
+        "graph": "fa fa-bar-chart-o",
+        "checkstyle-24x24": "fa fa-check-square",
         "confighistory": "fa fa-fast-backward"
     };
 
@@ -101,33 +109,55 @@ document.observe("dom:loaded", function () {
             width: null
         };
 
+        var regex = new RegExp("([0-9]*)x([0-9]*)", "ig");
         var classes = jQuery(img).attr('class');
-        if(classes) {
+        if (classes) {
             classes = classes.split(' ');
-            var regex = new RegExp("([0-9]*)x([0-9]*)", "ig");
             jQuery(classes).each(function (index, item) {
                 var result = regex.exec(item);
                 if (result && result[1] && result[2]) {
                     size.height = result[1];
                     size.width = result[2];
+                    console.debug('size class');
                 }
             });
         }
 
+
+        if (size.height === null && size.width === null) {
+            if (jQuery(img).attr('height') !== null && jQuery.attr('width') !== null) {
+                size.height = jQuery(img).attr('height');
+                size.width = jQuery.attr('width');
+                console.debug('size attribute');
+            }
+        }
+
+
         if (size.height === null && size.width === null) {
             size.height = img.height;
             size.width = img.width;
+            console.debug('size file');
         }
 
         if (size.height === null && size.width === null) {
-            size.height = 32 ;
-            size.width = 32 ;
+            var result = regex.exec(img.src);
+            if (result && result[1] && result[2]) {
+                size.height = result[1];
+                size.width = result[2];
+                console.debug('size url');
+            }
         }
-        size.height = parseInt(size.height,10);
-        size.width = parseInt(size.width,10);
+
+        if (size.height === null && size.width === null) {
+            size.height = 32;
+            size.width = 32;
+            console.debug('size default');
+        }
+        size.height = parseInt(size.height, 10);
+        size.width = parseInt(size.width, 10);
 
         //console.debug(size);
-        return size ;
+        return size;
     };
 
     var replaceImages = function (e) {
@@ -139,7 +169,7 @@ document.observe("dom:loaded", function () {
         }
         scope.each(function (index, element) {
             var src = element.src;
-            var size= getImgSize(element);
+            var size = getImgSize(element);
             try {
                 var regex = new RegExp("(?=[^/]+\\.[^/]{3,4}$).+", "g");
                 src = regex.exec(src);
