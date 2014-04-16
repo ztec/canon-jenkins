@@ -622,6 +622,9 @@ body, table, form, input, td, th, p, textarea, select {
     margin-left: 5px;
     position: absolute;
     left: 50px;
+    display: inline-block;
+    min-width: 80%;
+    height: 80%;
 }
 
 #navigation table.pane {
