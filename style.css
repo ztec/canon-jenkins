@@ -164,8 +164,9 @@ a.model-link.inside {
 }
 
 /* Hide standard Jenkins project status "ball" graphics in project table */
-#projectstatus td:first-child img {
-    display: none;
+#projectstatus td:first-child img,
+#projectstatus td:first-child i {
+    display: none ;
 }
 
 

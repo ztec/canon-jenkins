@@ -82,6 +82,7 @@ document.observe("dom:loaded", function () {
         "disabled": "build-status-icon gray",
         "chain": "fa fa-chain",
         "clock_anime": "fa fa-clock-o anime",
+        "diskusage48": "fa fa-hdd-o",
         "confighistory": "fa fa-fast-backward"
     };
 
@@ -90,6 +91,43 @@ document.observe("dom:loaded", function () {
     };
     iconNotFound.prototype.toString = function () {
         return 'icon ' + this.iconName + ' was not found in ref';
+    };
+
+
+    var getImgSize = function (img) {
+
+        var size = {
+            height: null,
+            width: null
+        };
+
+        var classes = jQuery(img).attr('class');
+        if(classes) {
+            classes = classes.split(' ');
+            var regex = new RegExp("([0-9]*)x([0-9]*)", "ig");
+            jQuery(classes).each(function (index, item) {
+                var result = regex.exec(item);
+                if (result && result[1] && result[2]) {
+                    size.height = result[1];
+                    size.width = result[2];
+                }
+            });
+        }
+
+        if (size.height === null && size.width === null) {
+            size.height = img.height;
+            size.width = img.width;
+        }
+
+        if (size.height === null && size.width === null) {
+            size.height = 32 ;
+            size.width = 32 ;
+        }
+        size.height = parseInt(size.height,10);
+        size.width = parseInt(size.width,10);
+
+        //console.debug(size);
+        return size ;
     };
 
     var replaceImages = function (e) {
@@ -101,6 +139,7 @@ document.observe("dom:loaded", function () {
         }
         scope.each(function (index, element) {
             var src = element.src;
+            var size= getImgSize(element);
             try {
                 var regex = new RegExp("(?=[^/]+\\.[^/]{3,4}$).+", "g");
                 src = regex.exec(src);
@@ -110,21 +149,17 @@ document.observe("dom:loaded", function () {
                     if (Object.prototype.toString.call(iconRef[imageName]) === '[object Array]') { //Stack case
                         var iconStack = new Element('span');
                         jQuery(iconStack).addClass('fa-stack');
-                        console.dir(iconRef[imageName]);
                         jQuery(iconRef[imageName]).each(function (index, item) {
                             var icon = new Element('i');
                             jQuery(icon).addClass(item).addClass('fa');
                             iconStack.appendChild(icon);
                         });
-                        if (element.height) {
-                            jQuery(iconStack).css('height', element.height + 'px');
-                            jQuery(iconStack).css('font-size', element.height / 2);
-                            jQuery(iconStack).css('display', 'inline-block');
-                        }
-                        if (element.width) {
-                            jQuery(iconStack).css('width', element.width + 'px');
-                            jQuery(iconStack).css('display', 'inline-block');
-                        }
+                        jQuery(iconStack).css('height', size.height + 'px');
+                        jQuery(iconStack).css('font-size', size.height / 2);
+                        //jQuery(iconStack).css('display', 'inline-block');
+
+                        jQuery(iconStack).css('width', size.width + 'px');
+
                         jQuery(element).after(iconStack);
                         jQuery(element).remove();
                         //console.debug('icon ' + imageName + ' was replaced by a stack of icons "' + iconRef[imageName].join(',') + '"');
@@ -133,15 +168,11 @@ document.observe("dom:loaded", function () {
                         var icon = new Element('i');
                         jQuery(icon).addClass(iconRef[imageName]);
 
-                        if (element.height) {
-                            jQuery(icon).css('height', element.height + 'px');
-                            jQuery(icon).css('font-size', element.height + 'px');
-                            jQuery(icon).css('display', 'inline-block');
-                        }
-                        if (element.width) {
-                            jQuery(icon).css('width', element.width + 'px');
-                            jQuery(icon).css('display', 'inline-block');
-                        }
+                        jQuery(icon).css('height', size.height + 'px');
+                        jQuery(icon).css('font-size', size.height + 'px');
+                        //jQuery(icon).css('display', 'inline-block');
+
+                        jQuery(icon).css('width', size.width + 'px');
 
                         jQuery(element).after(icon);
                         jQuery(element).remove();
