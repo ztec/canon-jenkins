@@ -242,6 +242,11 @@ table.progress-bar.red td.progress-bar-done {
     background-color: #73BF50 !important;
 }
 
+/* Instable state (yellow) styling for project table */
+#projectstatus td:first-child[data="2"] {
+    background-color: #db6f22 !important;
+}
+
 /* Building state (orange stripes) styling for build process table on left side */
 table.progress-bar.red td.progress-bar-done {
     background-color: #CC0000;
