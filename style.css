@@ -302,6 +302,10 @@ tr.unknown {
     border: 1px solid #DDDDDD;
 }
 
+.disabledJob {
+    opacity: 0.3;
+}
+
 #viewList td.inactive,
 #viewList td.filler {
     border-bottom: 1px solid #DDDDDD;
