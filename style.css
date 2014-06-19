@@ -451,6 +451,11 @@ img[alt~="Folder"] {
     background-image: url('img/box-orange.png');
 }
 
+.build-status-icon.yellow,
+.build-caption-status-icon.yellow {
+    background-image: url('img/box-orange.png');
+}
+
 .anime {
     -webkit-animation: building_cube 600ms; /* Chrome, Safari, Opera */
     -webkit-animation-iteration-count: infinite;
