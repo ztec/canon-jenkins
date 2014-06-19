@@ -247,6 +247,11 @@ table.progress-bar.red td.progress-bar-done {
     background-color: #db6f22 !important;
 }
 
+/* Instable state (yellow) styling for project table */
+#projectstatus td:first-child[data="3"] {
+    background-image: url("img/stripe_orange.png") !important; /* http://www.stripegenerator.com/#Zm9yZT05Njk2OTY7aD0zMDt3PTU7cD01O2JhY2sxPTg3ODc4NztiYWNrMj1mZjAwMDA7Z3Q9MDtkPTA7c2hhZG93PTA7 */
+}
+
 /* Building state (orange stripes) styling for build process table on left side */
 table.progress-bar.red td.progress-bar-done {
     background-color: #CC0000;
