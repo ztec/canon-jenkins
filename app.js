@@ -125,9 +125,9 @@ document.observe("dom:loaded", function () {
 
 
         if (size.height === null && size.width === null) {
-            if (jQuery(img).attr('height') !== null && jQuery.attr('width') !== null) {
+            if (jQuery(img).attr('height') !== null && jQuery(img).attr('width') !== null) {
                 size.height = jQuery(img).attr('height');
-                size.width = jQuery.attr('width');
+                size.width = jQuery(img).attr('width');
                 console.debug('size attribute');
             }
         }
